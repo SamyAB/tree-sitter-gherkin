@@ -1,0 +1,108 @@
+{
+  "name": "gherkin",
+  "rules": {
+    "feature": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "feature_keyword"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "title"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "scenario"
+        }
+      ]
+    },
+    "feature_keyword": {
+      "type": "STRING",
+      "value": "Feature: "
+    },
+    "title": {
+      "type": "PATTERN",
+      "value": "[A-Z][a-zA-Z ]+\\n"
+    },
+    "scenario": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "scenario_keyword"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "title"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "steps"
+        }
+      ]
+    },
+    "scenario_keyword": {
+      "type": "STRING",
+      "value": "  Scenario: "
+    },
+    "steps": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "given_keyword"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "step_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "when_keyword"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "step_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "then_keyword"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "step_definition"
+        }
+      ]
+    },
+    "given_keyword": {
+      "type": "STRING",
+      "value": "    Given "
+    },
+    "when_keyword": {
+      "type": "STRING",
+      "value": "    When "
+    },
+    "then_keyword": {
+      "type": "STRING",
+      "value": "    Then "
+    },
+    "step_definition": {
+      "type": "PATTERN",
+      "value": "[a-z][a-z ]+\\n"
+    }
+  },
+  "extras": [
+    {
+      "type": "PATTERN",
+      "value": "\\s"
+    }
+  ],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": []
+}
+

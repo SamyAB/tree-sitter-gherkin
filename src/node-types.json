@@ -1,0 +1,103 @@
+[
+  {
+    "type": "feature",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "feature_keyword",
+          "named": true
+        },
+        {
+          "type": "scenario",
+          "named": true
+        },
+        {
+          "type": "title",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "scenario",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "scenario_keyword",
+          "named": true
+        },
+        {
+          "type": "steps",
+          "named": true
+        },
+        {
+          "type": "title",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "steps",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "given_keyword",
+          "named": true
+        },
+        {
+          "type": "step_definition",
+          "named": true
+        },
+        {
+          "type": "then_keyword",
+          "named": true
+        },
+        {
+          "type": "when_keyword",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "feature_keyword",
+    "named": true
+  },
+  {
+    "type": "given_keyword",
+    "named": true
+  },
+  {
+    "type": "scenario_keyword",
+    "named": true
+  },
+  {
+    "type": "step_definition",
+    "named": true
+  },
+  {
+    "type": "then_keyword",
+    "named": true
+  },
+  {
+    "type": "title",
+    "named": true
+  },
+  {
+    "type": "when_keyword",
+    "named": true
+  }
+]
