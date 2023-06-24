@@ -17,22 +17,16 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "scenario"
+              "name": "multiline_text"
             },
             {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "multiline_text"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "scenario"
-                }
-              ]
+              "type": "BLANK"
             }
           ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "scenario"
         }
       ]
     },
@@ -51,6 +45,10 @@
     "feature_keyword": {
       "type": "STRING",
       "value": "Feature: "
+    },
+    "scenario_keyword": {
+      "type": "STRING",
+      "value": "  Scenario: "
     },
     "title": {
       "type": "PATTERN",
@@ -77,6 +75,10 @@
         }
       ]
     },
+    "step_definition": {
+      "type": "PATTERN",
+      "value": "[^A-Z][a-z][a-z ]+\\n"
+    },
     "scenario": {
       "type": "SEQ",
       "members": [
@@ -93,28 +95,18 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "steps"
+              "name": "multiline_text"
             },
             {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "multiline_text"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "steps"
-                }
-              ]
+              "type": "BLANK"
             }
           ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "steps"
         }
       ]
-    },
-    "scenario_keyword": {
-      "type": "STRING",
-      "value": "  Scenario: "
     },
     "steps": {
       "type": "SEQ",
@@ -144,10 +136,6 @@
           "name": "step_definition"
         }
       ]
-    },
-    "step_definition": {
-      "type": "PATTERN",
-      "value": "[^A-Z][a-z][a-z ]+\\n"
     }
   },
   "extras": [

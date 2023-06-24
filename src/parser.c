@@ -21,10 +21,10 @@ enum {
   sym_when_keyword = 2,
   sym_then_keyword = 3,
   sym_feature_keyword = 4,
-  sym_title = 5,
-  aux_sym_multiline_text_token1 = 6,
-  anon_sym_LF = 7,
-  sym_scenario_keyword = 8,
+  sym_scenario_keyword = 5,
+  sym_title = 6,
+  aux_sym_multiline_text_token1 = 7,
+  anon_sym_LF = 8,
   sym_step_definition = 9,
   sym_feature = 10,
   sym_multiline_text = 11,
@@ -39,10 +39,10 @@ static const char * const ts_symbol_names[] = {
   [sym_when_keyword] = "when_keyword",
   [sym_then_keyword] = "then_keyword",
   [sym_feature_keyword] = "feature_keyword",
+  [sym_scenario_keyword] = "scenario_keyword",
   [sym_title] = "title",
   [aux_sym_multiline_text_token1] = "multiline_text_token1",
   [anon_sym_LF] = "\n",
-  [sym_scenario_keyword] = "scenario_keyword",
   [sym_step_definition] = "step_definition",
   [sym_feature] = "feature",
   [sym_multiline_text] = "multiline_text",
@@ -57,10 +57,10 @@ static const TSSymbol ts_symbol_map[] = {
   [sym_when_keyword] = sym_when_keyword,
   [sym_then_keyword] = sym_then_keyword,
   [sym_feature_keyword] = sym_feature_keyword,
+  [sym_scenario_keyword] = sym_scenario_keyword,
   [sym_title] = sym_title,
   [aux_sym_multiline_text_token1] = aux_sym_multiline_text_token1,
   [anon_sym_LF] = anon_sym_LF,
-  [sym_scenario_keyword] = sym_scenario_keyword,
   [sym_step_definition] = sym_step_definition,
   [sym_feature] = sym_feature,
   [sym_multiline_text] = sym_multiline_text,
@@ -90,6 +90,10 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = true,
   },
+  [sym_scenario_keyword] = {
+    .visible = true,
+    .named = true,
+  },
   [sym_title] = {
     .visible = true,
     .named = true,
@@ -101,10 +105,6 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
   [anon_sym_LF] = {
     .visible = true,
     .named = false,
-  },
-  [sym_scenario_keyword] = {
-    .visible = true,
-    .named = true,
   },
   [sym_step_definition] = {
     .visible = true,
@@ -186,24 +186,24 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           ('a' <= lookahead && lookahead <= 'z')) ADVANCE(1);
       END_STATE();
     case 2:
-      if (lookahead == '\n') ADVANCE(62);
-      if (lookahead == ' ') ADVANCE(54);
+      if (lookahead == '\n') ADVANCE(63);
+      if (lookahead == ' ') ADVANCE(55);
       if (lookahead == '\t' ||
-          lookahead == '\r') ADVANCE(52);
-      if (lookahead != 0) ADVANCE(51);
+          lookahead == '\r') ADVANCE(53);
+      if (lookahead != 0) ADVANCE(52);
       END_STATE();
     case 3:
-      if (lookahead == '\n') ADVANCE(50);
+      if (lookahead == '\n') ADVANCE(51);
       if (lookahead == ' ' ||
           ('A' <= lookahead && lookahead <= 'Z') ||
           ('a' <= lookahead && lookahead <= 'z')) ADVANCE(3);
       END_STATE();
     case 4:
-      if (lookahead == '\n') ADVANCE(63);
-      if (lookahead == ' ') ADVANCE(59);
+      if (lookahead == '\n') ADVANCE(64);
+      if (lookahead == ' ') ADVANCE(60);
       if (lookahead == '\t' ||
-          lookahead == '\r') ADVANCE(57);
-      if (lookahead != 0) ADVANCE(51);
+          lookahead == '\r') ADVANCE(58);
+      if (lookahead != 0) ADVANCE(52);
       END_STATE();
     case 5:
       if (lookahead == ' ') ADVANCE(6);
@@ -267,7 +267,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead == ' ') ADVANCE(46);
       END_STATE();
     case 14:
-      if (lookahead == ' ') ADVANCE(64);
+      if (lookahead == ' ') ADVANCE(50);
       END_STATE();
     case 15:
       if (lookahead == ' ') ADVANCE(9);
@@ -390,101 +390,101 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       ACCEPT_TOKEN(sym_feature_keyword);
       END_STATE();
     case 50:
-      ACCEPT_TOKEN(sym_title);
+      ACCEPT_TOKEN(sym_scenario_keyword);
       END_STATE();
     case 51:
-      ACCEPT_TOKEN(aux_sym_multiline_text_token1);
+      ACCEPT_TOKEN(sym_title);
       END_STATE();
     case 52:
       ACCEPT_TOKEN(aux_sym_multiline_text_token1);
-      if (lookahead == '\n') ADVANCE(62);
-      if (lookahead == ' ') ADVANCE(54);
-      if (lookahead == '\t' ||
-          lookahead == '\r') ADVANCE(52);
-      if (lookahead != 0) ADVANCE(51);
       END_STATE();
     case 53:
       ACCEPT_TOKEN(aux_sym_multiline_text_token1);
-      if (lookahead == '\n') ADVANCE(62);
-      if (lookahead == ' ') ADVANCE(53);
-      if (lookahead == 'S') ADVANCE(60);
+      if (lookahead == '\n') ADVANCE(63);
+      if (lookahead == ' ') ADVANCE(55);
       if (lookahead == '\t' ||
-          lookahead == '\r') ADVANCE(52);
-      if (lookahead != 0) ADVANCE(51);
+          lookahead == '\r') ADVANCE(53);
+      if (lookahead != 0) ADVANCE(52);
       END_STATE();
     case 54:
       ACCEPT_TOKEN(aux_sym_multiline_text_token1);
-      if (lookahead == '\n') ADVANCE(62);
-      if (lookahead == ' ') ADVANCE(53);
+      if (lookahead == '\n') ADVANCE(63);
+      if (lookahead == ' ') ADVANCE(54);
+      if (lookahead == 'S') ADVANCE(61);
       if (lookahead == '\t' ||
-          lookahead == '\r') ADVANCE(52);
-      if (lookahead != 0) ADVANCE(51);
+          lookahead == '\r') ADVANCE(53);
+      if (lookahead != 0) ADVANCE(52);
       END_STATE();
     case 55:
       ACCEPT_TOKEN(aux_sym_multiline_text_token1);
       if (lookahead == '\n') ADVANCE(63);
-      if (lookahead == ' ') ADVANCE(55);
-      if (lookahead == 'G') ADVANCE(61);
+      if (lookahead == ' ') ADVANCE(54);
       if (lookahead == '\t' ||
-          lookahead == '\r') ADVANCE(57);
-      if (lookahead != 0) ADVANCE(51);
+          lookahead == '\r') ADVANCE(53);
+      if (lookahead != 0) ADVANCE(52);
       END_STATE();
     case 56:
       ACCEPT_TOKEN(aux_sym_multiline_text_token1);
-      if (lookahead == '\n') ADVANCE(63);
-      if (lookahead == ' ') ADVANCE(55);
+      if (lookahead == '\n') ADVANCE(64);
+      if (lookahead == ' ') ADVANCE(56);
+      if (lookahead == 'G') ADVANCE(62);
       if (lookahead == '\t' ||
-          lookahead == '\r') ADVANCE(57);
-      if (lookahead != 0) ADVANCE(51);
+          lookahead == '\r') ADVANCE(58);
+      if (lookahead != 0) ADVANCE(52);
       END_STATE();
     case 57:
       ACCEPT_TOKEN(aux_sym_multiline_text_token1);
-      if (lookahead == '\n') ADVANCE(63);
-      if (lookahead == ' ') ADVANCE(59);
+      if (lookahead == '\n') ADVANCE(64);
+      if (lookahead == ' ') ADVANCE(56);
       if (lookahead == '\t' ||
-          lookahead == '\r') ADVANCE(57);
-      if (lookahead != 0) ADVANCE(51);
+          lookahead == '\r') ADVANCE(58);
+      if (lookahead != 0) ADVANCE(52);
       END_STATE();
     case 58:
       ACCEPT_TOKEN(aux_sym_multiline_text_token1);
-      if (lookahead == '\n') ADVANCE(63);
-      if (lookahead == ' ') ADVANCE(56);
+      if (lookahead == '\n') ADVANCE(64);
+      if (lookahead == ' ') ADVANCE(60);
       if (lookahead == '\t' ||
-          lookahead == '\r') ADVANCE(57);
-      if (lookahead != 0) ADVANCE(51);
+          lookahead == '\r') ADVANCE(58);
+      if (lookahead != 0) ADVANCE(52);
       END_STATE();
     case 59:
       ACCEPT_TOKEN(aux_sym_multiline_text_token1);
-      if (lookahead == '\n') ADVANCE(63);
-      if (lookahead == ' ') ADVANCE(58);
+      if (lookahead == '\n') ADVANCE(64);
+      if (lookahead == ' ') ADVANCE(57);
       if (lookahead == '\t' ||
-          lookahead == '\r') ADVANCE(57);
-      if (lookahead != 0) ADVANCE(51);
+          lookahead == '\r') ADVANCE(58);
+      if (lookahead != 0) ADVANCE(52);
       END_STATE();
     case 60:
       ACCEPT_TOKEN(aux_sym_multiline_text_token1);
-      if (lookahead == 'c') ADVANCE(22);
+      if (lookahead == '\n') ADVANCE(64);
+      if (lookahead == ' ') ADVANCE(59);
+      if (lookahead == '\t' ||
+          lookahead == '\r') ADVANCE(58);
+      if (lookahead != 0) ADVANCE(52);
       END_STATE();
     case 61:
       ACCEPT_TOKEN(aux_sym_multiline_text_token1);
-      if (lookahead == 'i') ADVANCE(40);
+      if (lookahead == 'c') ADVANCE(22);
       END_STATE();
     case 62:
-      ACCEPT_TOKEN(anon_sym_LF);
-      if (lookahead == '\n') ADVANCE(62);
-      if (lookahead == ' ') ADVANCE(54);
-      if (lookahead == '\t' ||
-          lookahead == '\r') ADVANCE(52);
+      ACCEPT_TOKEN(aux_sym_multiline_text_token1);
+      if (lookahead == 'i') ADVANCE(40);
       END_STATE();
     case 63:
       ACCEPT_TOKEN(anon_sym_LF);
       if (lookahead == '\n') ADVANCE(63);
-      if (lookahead == ' ') ADVANCE(59);
+      if (lookahead == ' ') ADVANCE(55);
       if (lookahead == '\t' ||
-          lookahead == '\r') ADVANCE(57);
+          lookahead == '\r') ADVANCE(53);
       END_STATE();
     case 64:
-      ACCEPT_TOKEN(sym_scenario_keyword);
+      ACCEPT_TOKEN(anon_sym_LF);
+      if (lookahead == '\n') ADVANCE(64);
+      if (lookahead == ' ') ADVANCE(60);
+      if (lookahead == '\t' ||
+          lookahead == '\r') ADVANCE(58);
       END_STATE();
     case 65:
       ACCEPT_TOKEN(sym_step_definition);
@@ -538,7 +538,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
 
 static const uint16_t ts_small_parse_table[] = {
   [0] = 5,
-    ACTIONS(7), 1,
+    ACTIONS(5), 1,
       sym_scenario_keyword,
     STATE(7), 1,
       aux_sym_multiline_text_repeat1,
@@ -546,7 +546,7 @@ static const uint16_t ts_small_parse_table[] = {
       sym_multiline_text,
     STATE(11), 1,
       sym_scenario,
-    ACTIONS(5), 2,
+    ACTIONS(7), 2,
       aux_sym_multiline_text_token1,
       anon_sym_LF,
   [17] = 5,
@@ -672,8 +672,8 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [0] = {.entry = {.count = 0, .reusable = false}},
   [1] = {.entry = {.count = 1, .reusable = false}}, RECOVER(),
   [3] = {.entry = {.count = 1, .reusable = true}}, SHIFT(13),
-  [5] = {.entry = {.count = 1, .reusable = false}}, SHIFT(7),
-  [7] = {.entry = {.count = 1, .reusable = false}}, SHIFT(21),
+  [5] = {.entry = {.count = 1, .reusable = false}}, SHIFT(21),
+  [7] = {.entry = {.count = 1, .reusable = false}}, SHIFT(7),
   [9] = {.entry = {.count = 1, .reusable = false}}, SHIFT(12),
   [11] = {.entry = {.count = 1, .reusable = false}}, SHIFT(5),
   [13] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym_multiline_text_repeat1, 2),

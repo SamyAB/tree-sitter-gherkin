@@ -5,13 +5,8 @@ module.exports = grammar({
     feature: $ => seq(
       $.feature_keyword,
       $.title,
-      choice(
-        $.scenario,
-        seq(
-          $.multiline_text,
-          $.scenario
-        )
-      )
+      optional($.multiline_text),
+      $.scenario
     ),
 
     given_keyword: $ => '    Given ',
@@ -34,13 +29,8 @@ module.exports = grammar({
     scenario: $ => seq(
       $.scenario_keyword,
       $.title,
-      choice(
-        $.steps,
-        seq(
-          $.multiline_text,
-          $.steps,
-        )
-      )
+      optional($.multiline_text),
+      $.steps,
     ),
 
     steps: $ => seq(
