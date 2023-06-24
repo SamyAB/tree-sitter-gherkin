@@ -40,6 +40,10 @@
       "required": true,
       "types": [
         {
+          "type": "example_keyword",
+          "named": true
+        },
+        {
           "type": "multiline_text",
           "named": true
         },
@@ -88,6 +92,10 @@
   {
     "type": "\n",
     "named": false
+  },
+  {
+    "type": "example_keyword",
+    "named": true
   },
   {
     "type": "feature_keyword",

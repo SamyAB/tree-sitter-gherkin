@@ -14,6 +14,7 @@ module.exports = grammar({
     then_keyword: $ => '    Then ',
     feature_keyword: $ => 'Feature: ',
     scenario_keyword: $ => '  Scenario: ',
+    example_keyword: $ => '  Example: ',
 
     title: $ => /[A-Z][a-zA-Z ]+\n/,
     multiline_text: $ => seq(
@@ -27,7 +28,10 @@ module.exports = grammar({
     step_definition: $ => /[^A-Z][a-z][a-z ]+\n/,
 
     scenario: $ => seq(
-      $.scenario_keyword,
+      choice(
+        $.scenario_keyword,
+        $.example_keyword,
+      ),
       $.title,
       optional($.multiline_text),
       $.steps,

@@ -50,6 +50,10 @@
       "type": "STRING",
       "value": "  Scenario: "
     },
+    "example_keyword": {
+      "type": "STRING",
+      "value": "  Example: "
+    },
     "title": {
       "type": "PATTERN",
       "value": "[A-Z][a-zA-Z ]+\\n"
@@ -83,8 +87,17 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "scenario_keyword"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "scenario_keyword"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "example_keyword"
+            }
+          ]
         },
         {
           "type": "SYMBOL",
