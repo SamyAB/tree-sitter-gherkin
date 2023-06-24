@@ -5,18 +5,43 @@ module.exports = grammar({
     feature: $ => seq(
       $.feature_keyword,
       $.title,
-      $.scenario,
+      choice(
+        $.scenario,
+        seq(
+          $.multiline_text,
+          $.scenario
+        )
+      )
     ),
 
+    given_keyword: $ => '    Given ',
+    when_keyword: $ => '    When ',
+    then_keyword: $ => '    Then ',
     feature_keyword: $ => 'Feature: ',
+    scenario_keyword: $ => '  Scenario: ',
+
     title: $ => /[A-Z][a-zA-Z ]+\n/,
+    multiline_text: $ => seq(
+      repeat1(
+        choice(
+          /[^\n]/,
+          '\n',
+        )
+      )
+    ),
+    step_definition: $ => /[^A-Z][a-z][a-z ]+\n/,
 
     scenario: $ => seq(
       $.scenario_keyword,
       $.title,
-      $.steps,
+      choice(
+        $.steps,
+        seq(
+          $.multiline_text,
+          $.steps,
+        )
+      )
     ),
-    scenario_keyword: $ => '  Scenario: ',
 
     steps: $ => seq(
       $.given_keyword,
@@ -26,10 +51,5 @@ module.exports = grammar({
       $.then_keyword,
       $.step_definition,
     ),
-    
-    given_keyword: $ => '    Given ',
-    when_keyword: $ => '    When ',
-    then_keyword: $ => '    Then ',
-    step_definition: $ => /[a-z][a-z ]+\n/,
   }
 });

@@ -13,10 +13,40 @@
           "name": "title"
         },
         {
-          "type": "SYMBOL",
-          "name": "scenario"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "scenario"
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "multiline_text"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "scenario"
+                }
+              ]
+            }
+          ]
         }
       ]
+    },
+    "given_keyword": {
+      "type": "STRING",
+      "value": "    Given "
+    },
+    "when_keyword": {
+      "type": "STRING",
+      "value": "    When "
+    },
+    "then_keyword": {
+      "type": "STRING",
+      "value": "    Then "
     },
     "feature_keyword": {
       "type": "STRING",
@@ -25,6 +55,27 @@
     "title": {
       "type": "PATTERN",
       "value": "[A-Z][a-zA-Z ]+\\n"
+    },
+    "multiline_text": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "PATTERN",
+                "value": "[^\\n]"
+              },
+              {
+                "type": "STRING",
+                "value": "\n"
+              }
+            ]
+          }
+        }
+      ]
     },
     "scenario": {
       "type": "SEQ",
@@ -38,8 +89,26 @@
           "name": "title"
         },
         {
-          "type": "SYMBOL",
-          "name": "steps"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "steps"
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "multiline_text"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "steps"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -76,21 +145,9 @@
         }
       ]
     },
-    "given_keyword": {
-      "type": "STRING",
-      "value": "    Given "
-    },
-    "when_keyword": {
-      "type": "STRING",
-      "value": "    When "
-    },
-    "then_keyword": {
-      "type": "STRING",
-      "value": "    Then "
-    },
     "step_definition": {
       "type": "PATTERN",
-      "value": "[a-z][a-z ]+\\n"
+      "value": "[^A-Z][a-z][a-z ]+\\n"
     }
   },
   "extras": [

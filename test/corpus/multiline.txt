@@ -1,0 +1,43 @@
+================
+Multiline titles
+================
+
+Feature: This is the name of a feature
+
+  This can describe the feature and maybe
+  what it does.
+
+  It can also contain examples.
+
+  Scenario: This is the title of a scenario
+
+    This is a description of the scenario
+
+	It can be as long as you need it to be
+
+	As long as no line starts with a keyword
+
+    Given this is a given step
+    When this is a when step
+    Then this is a then step
+
+---
+
+(feature
+  (feature_keyword)
+  (title)
+  (multiline_text)
+  (scenario
+    (scenario_keyword)
+    (title)
+	(multiline_text)
+    (steps
+        (given_keyword)
+		(step_definition)
+        (when_keyword)
+		(step_definition)
+        (then_keyword)
+		(step_definition)
+    )
+  )
+)

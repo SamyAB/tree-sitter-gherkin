@@ -12,6 +12,10 @@
           "named": true
         },
         {
+          "type": "multiline_text",
+          "named": true
+        },
+        {
           "type": "scenario",
           "named": true
         },
@@ -23,6 +27,11 @@
     }
   },
   {
+    "type": "multiline_text",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "scenario",
     "named": true,
     "fields": {},
@@ -30,6 +39,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "multiline_text",
+          "named": true
+        },
         {
           "type": "scenario_keyword",
           "named": true
@@ -71,6 +84,10 @@
         }
       ]
     }
+  },
+  {
+    "type": "\n",
+    "named": false
   },
   {
     "type": "feature_keyword",
