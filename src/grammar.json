@@ -26,7 +26,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "scenario"
+          "name": "scenarios"
         }
       ]
     },
@@ -58,6 +58,13 @@
           }
         }
       ]
+    },
+    "scenarios": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "SYMBOL",
+        "name": "scenario"
+      }
     },
     "scenario": {
       "type": "SEQ",

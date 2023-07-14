@@ -13,7 +13,7 @@ Gherkin grammar for [tree-sitter](https://github.com/tree-sitter/tree-sitter)
 - [x] Support for features using keyword `Example` instead of `Scenario`
 - [x] Support for scenarios with only two steps
 - [x] Support for scenarios with more than three steps
-- [ ] Support for multiple scenarios within a single feature
+- [x] Support for multiple scenarios within a single feature
 - [ ] Support for `And` and `But` keywords for steps
 - [ ] Support for `*` keyword for steps
 - [ ] Support ordering enforcement for steps

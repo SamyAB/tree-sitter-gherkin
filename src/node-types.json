@@ -16,7 +16,7 @@
           "named": true
         },
         {
-          "type": "scenario",
+          "type": "scenarios",
           "named": true
         },
         {
@@ -76,6 +76,21 @@
         },
         {
           "type": "title",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "scenarios",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "scenario",
           "named": true
         }
       ]

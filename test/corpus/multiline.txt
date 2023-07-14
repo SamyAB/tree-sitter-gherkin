@@ -27,28 +27,30 @@ Feature: This is the name of a feature
   (feature_keyword)
   (title)
   (multiline_text)
-  (scenario
-    (scenario_keyword)
-    (title)
-    (multiline_text)
-    (steps
-      (full_step
-        (step_keyword
-          (given_keyword)   
+  (scenarios
+    (scenario
+      (scenario_keyword)
+      (title)
+      (multiline_text)
+      (steps
+        (full_step
+          (step_keyword
+            (given_keyword)   
+          )
+          (step_definition)
         )
-        (step_definition)
-      )
-      (full_step
-        (step_keyword
-          (when_keyword)   
+        (full_step
+          (step_keyword
+            (when_keyword)   
+          )
+          (step_definition)
         )
-        (step_definition)
-      )
-      (full_step
-        (step_keyword
-          (then_keyword)   
+        (full_step
+          (step_keyword
+            (then_keyword)   
+          )
+          (step_definition)
         )
-        (step_definition)
       )
     )
   )

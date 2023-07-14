@@ -12,21 +12,23 @@ Feature: This is the name of a feature
 (feature
   (feature_keyword)
   (title)
-  (scenario
-    (example_keyword)
-    (title)
-    (steps
-      (full_step
-        (step_keyword
-          (when_keyword)
+  (scenarios
+    (scenario
+      (example_keyword)
+      (title)
+      (steps
+        (full_step
+          (step_keyword
+            (when_keyword)
+          )
+          (step_definition)
         )
-        (step_definition)
-      )
-      (full_step
-        (step_keyword
-          (then_keyword)
+        (full_step
+          (step_keyword
+            (then_keyword)
+          )
+          (step_definition)
         )
-        (step_definition)
       )
     )
   )

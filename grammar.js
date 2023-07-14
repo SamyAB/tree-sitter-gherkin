@@ -6,7 +6,7 @@ module.exports = grammar({
       $.feature_keyword,
       $.title,
       optional($.multiline_text),
-      $.scenario
+      $.scenarios
     ),
 
     feature_keyword: $ => 'Feature: ',
@@ -22,6 +22,8 @@ module.exports = grammar({
       )
     ),
 
+    scenarios: $ => repeat1($.scenario),
+    
     scenario: $ => seq(
       choice(
         $.scenario_keyword,

@@ -1,15 +1,17 @@
-===========================
-Two given two when two then
-===========================
+=============
+Two scenarios
+=============
 
 Feature: This is the name of a feature
-  Example: This is the title of a scenario
+  Scenario: This is the title of a scenario
     Given this is a given step
-    Given this is another given step
     When this is a when step
-    When this is anoter when step
     Then this is a then step
-    Then this is another then step
+
+  Scenario: This is the title of a scenario
+    Given this is a given step
+    When this is a when step
+    Then this is a then step
 
 ---
 
@@ -18,24 +20,12 @@ Feature: This is the name of a feature
   (title)
   (scenarios
     (scenario
-      (example_keyword)
+      (scenario_keyword)
       (title)
       (steps
         (full_step
           (step_keyword
             (given_keyword)
-          )
-          (step_definition)
-        )
-        (full_step
-          (step_keyword
-            (given_keyword)
-          )
-          (step_definition)
-        )
-        (full_step
-          (step_keyword
-            (when_keyword)
           )
           (step_definition)
         )
@@ -48,6 +38,24 @@ Feature: This is the name of a feature
         (full_step
           (step_keyword
             (then_keyword)
+          )
+          (step_definition)
+        )
+      )
+    )
+    (scenario
+      (scenario_keyword)
+      (title)
+      (steps
+        (full_step
+          (step_keyword
+            (given_keyword)
+          )
+          (step_definition)
+        )
+        (full_step
+          (step_keyword
+            (when_keyword)
           )
           (step_definition)
         )
