@@ -51,10 +51,14 @@ module.exports = grammar({
       $.given_keyword,
       $.when_keyword,
       $.then_keyword,
+      $.and_keyword,
+      $.but_keyword,
     ),
     given_keyword: $ => '    Given ',
     when_keyword: $ => '    When ',
     then_keyword: $ => '    Then ',
+    and_keyword: $ => '    And ',
+    but_keyword: $ => '    But ',
 
     step_definition: $ => /[^A-Z][a-z][a-z ]+\n/,
   }

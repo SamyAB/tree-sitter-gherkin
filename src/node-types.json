@@ -105,6 +105,14 @@
       "required": true,
       "types": [
         {
+          "type": "and_keyword",
+          "named": true
+        },
+        {
+          "type": "but_keyword",
+          "named": true
+        },
+        {
           "type": "given_keyword",
           "named": true
         },
@@ -137,6 +145,14 @@
   {
     "type": "\n",
     "named": false
+  },
+  {
+    "type": "and_keyword",
+    "named": true
+  },
+  {
+    "type": "but_keyword",
+    "named": true
   },
   {
     "type": "example_keyword",

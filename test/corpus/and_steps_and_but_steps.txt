@@ -1,0 +1,63 @@
+=======================
+And steps and but steps
+=======================
+
+Feature: This is the name of a feature
+  Scenario: This is the title of a scenario
+    Given this is a given step
+    And this is a another step
+    But this is also another step
+    When this is a when step
+    Then this is a then step
+    But this is also a step
+
+---
+
+(feature
+  (feature_keyword)
+  (title)
+  (scenarios
+    (scenario
+      (scenario_keyword)
+      (title)
+      (steps
+        (full_step
+          (step_keyword
+            (given_keyword)
+          )
+          (step_definition)
+        )
+        (full_step
+          (step_keyword
+            (and_keyword)
+          )
+          (step_definition)
+        )
+        (full_step
+          (step_keyword
+            (but_keyword)
+          )
+          (step_definition)
+        )
+        (full_step
+          (step_keyword
+            (when_keyword)
+          )
+          (step_definition)
+        )
+        (full_step
+          (step_keyword
+            (then_keyword)
+          )
+          (step_definition)
+        )
+        (full_step
+          (step_keyword
+            (but_keyword)
+          )
+          (step_definition)
+        )
+      )
+    )
+  )
+)

@@ -16,8 +16,13 @@ To make this grammar complete we need to add
 - [x] Support for scenarios with only two steps
 - [x] Support for scenarios with more than three steps
 - [x] Support for multiple scenarios within a single feature
-- [ ] Support for `And` and `But` keywords for steps
+- [x] Support for `And` and `But` keywords for steps
 - [ ] Support for `*` keyword for steps
 - [ ] Support ordering enforcement for steps
 - [ ] Support for `Backgroud`s
 - [ ] Support for `Rule`s
+- [ ] Support for `Scenario Outline`s
+- [ ] Support for using the keyword `Scenario Template` instead of `Senario Outline`
+- [ ] Support for `"""` doc strings
+- [ ] Support for '#' comments
+- [ ] Support for '@' tags"
