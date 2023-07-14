@@ -38,23 +38,54 @@ module.exports = grammar({
     example_keyword: $ => '  Example: ',
 
     steps: $ => seq(
-      $.full_step,
-      repeat1($.full_step),
+      optional($.given_steps),
+      $.when_step,
+      $.then_steps,
     ),
 
-    full_step: $ => seq(
-      $.step_keyword,
+    given_steps : $ => seq(
+      $.given_step,
+      repeat(
+        choice(
+          $.given_step,
+          $.additional_step,
+        )
+      ),
+    ),
+
+    then_steps: $ => seq(
+      $.then_step,
+      repeat(
+        choice(
+          $.then_step,
+          $.additional_step,
+        )
+      ),
+    ),
+
+    given_step: $ => seq(
+      $.given_keyword,
+      $.step_definition,
+    ),
+    when_step: $ => seq(
+      $.when_keyword,
+      $.step_definition,
+    ),
+    then_step: $ => seq(
+      $.then_keyword,
+      $.step_definition,
+    ),
+    additional_step: $ => seq(
+      $.additional_step_keyword,
       $.step_definition,
     ),
 
-    step_keyword: $ => choice(
-      $.given_keyword,
-      $.when_keyword,
-      $.then_keyword,
+    additional_step_keyword: $ => choice(
       $.and_keyword,
       $.but_keyword,
       $.asterisk_keyword,
     ),
+
     given_keyword: $ => '    Given ',
     when_keyword: $ => '    When ',
     then_keyword: $ => '    Then ',

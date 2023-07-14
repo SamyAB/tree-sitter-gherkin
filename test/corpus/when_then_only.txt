@@ -17,17 +17,15 @@ Feature: This is the name of a feature
       (example_keyword)
       (title)
       (steps
-        (full_step
-          (step_keyword
-            (when_keyword)
-          )
+        (when_step
+          (when_keyword)
           (step_definition)
         )
-        (full_step
-          (step_keyword
+        (then_steps
+          (then_step
             (then_keyword)
+            (step_definition)
           )
-          (step_definition)
         )
       )
     )

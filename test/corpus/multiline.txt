@@ -33,23 +33,21 @@ Feature: This is the name of a feature
       (title)
       (description)
       (steps
-        (full_step
-          (step_keyword
+        (given_steps
+          (given_step
             (given_keyword)   
+            (step_definition)
           )
+        )
+        (when_step
+          (when_keyword)
           (step_definition)
         )
-        (full_step
-          (step_keyword
-            (when_keyword)   
-          )
-          (step_definition)
-        )
-        (full_step
-          (step_keyword
+        (then_steps
+          (then_step
             (then_keyword)   
+            (step_definition)
           )
-          (step_definition)
         )
       )
     )

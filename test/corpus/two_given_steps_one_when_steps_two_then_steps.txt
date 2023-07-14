@@ -1,5 +1,5 @@
 ===========================
-Two given two when two then
+Two given one when two then
 ===========================
 
 Feature: This is the name of a feature
@@ -7,7 +7,6 @@ Feature: This is the name of a feature
     Given this is a given step
     Given this is another given step
     When this is a when step
-    When this is another when step
     Then this is a then step
     Then this is another then step
 
@@ -21,41 +20,29 @@ Feature: This is the name of a feature
       (example_keyword)
       (title)
       (steps
-        (full_step
-          (step_keyword
+        (given_steps
+          (given_step
             (given_keyword)
+            (step_definition)
           )
-          (step_definition)
-        )
-        (full_step
-          (step_keyword
+          (given_step
             (given_keyword)
+            (step_definition)
           )
+        )
+        (when_step
+          (when_keyword)
           (step_definition)
         )
-        (full_step
-          (step_keyword
-            (when_keyword)
-          )
-          (step_definition)
-        )
-        (full_step
-          (step_keyword
-            (when_keyword)
-          )
-          (step_definition)
-        )
-        (full_step
-          (step_keyword
+        (then_steps
+          (then_step
             (then_keyword)
+            (step_definition)
           )
-          (step_definition)
-        )
-        (full_step
-          (step_keyword
+          (then_step
             (then_keyword)
+            (step_definition)
           )
-          (step_definition)
         )
       )
     )

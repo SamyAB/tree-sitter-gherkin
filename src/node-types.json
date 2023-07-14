@@ -1,5 +1,47 @@
 [
   {
+    "type": "additional_step",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "additional_step_keyword",
+          "named": true
+        },
+        {
+          "type": "step_definition",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "additional_step_keyword",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "and_keyword",
+          "named": true
+        },
+        {
+          "type": "asterisk_keyword",
+          "named": true
+        },
+        {
+          "type": "but_keyword",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "description",
     "named": true,
     "fields": {}
@@ -32,7 +74,7 @@
     }
   },
   {
-    "type": "full_step",
+    "type": "given_step",
     "named": true,
     "fields": {},
     "children": {
@@ -40,11 +82,30 @@
       "required": true,
       "types": [
         {
-          "type": "step_definition",
+          "type": "given_keyword",
           "named": true
         },
         {
-          "type": "step_keyword",
+          "type": "step_definition",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "given_steps",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "additional_step",
+          "named": true
+        },
+        {
+          "type": "given_step",
           "named": true
         }
       ]
@@ -97,41 +158,6 @@
     }
   },
   {
-    "type": "step_keyword",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "and_keyword",
-          "named": true
-        },
-        {
-          "type": "asterisk_keyword",
-          "named": true
-        },
-        {
-          "type": "but_keyword",
-          "named": true
-        },
-        {
-          "type": "given_keyword",
-          "named": true
-        },
-        {
-          "type": "then_keyword",
-          "named": true
-        },
-        {
-          "type": "when_keyword",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "steps",
     "named": true,
     "fields": {},
@@ -140,7 +166,72 @@
       "required": true,
       "types": [
         {
-          "type": "full_step",
+          "type": "given_steps",
+          "named": true
+        },
+        {
+          "type": "then_steps",
+          "named": true
+        },
+        {
+          "type": "when_step",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "then_step",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "step_definition",
+          "named": true
+        },
+        {
+          "type": "then_keyword",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "then_steps",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "additional_step",
+          "named": true
+        },
+        {
+          "type": "then_step",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "when_step",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "step_definition",
+          "named": true
+        },
+        {
+          "type": "when_keyword",
           "named": true
         }
       ]
