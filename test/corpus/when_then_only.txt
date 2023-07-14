@@ -1,10 +1,9 @@
-================================================
-Basic feature with one scenario given when then
-================================================
+==================================
+Having only when and then as steps
+==================================
 
 Feature: This is the name of a feature
-  Scenario: This is the title of a scenario
-    Given this is a given step
+  Example: This is the title of a scenario
     When this is a when step
     Then this is a then step
 
@@ -14,15 +13,9 @@ Feature: This is the name of a feature
   (feature_keyword)
   (title)
   (scenario
-    (scenario_keyword)
+    (example_keyword)
     (title)
     (steps
-      (full_step
-        (step_keyword
-          (given_keyword)
-        )
-        (step_definition)
-      )
       (full_step
         (step_keyword
           (when_keyword)

@@ -13,9 +13,9 @@ Feature: This is the name of a feature
 
     This is a description of the scenario
 
-	It can be as long as you need it to be
+    It can be as long as you need it to be
 
-	As long as no line starts with a keyword
+    As long as no line starts with a keyword
 
     Given this is a given step
     When this is a when step
@@ -30,14 +30,26 @@ Feature: This is the name of a feature
   (scenario
     (scenario_keyword)
     (title)
-	(multiline_text)
+    (multiline_text)
     (steps
-        (given_keyword)
-		(step_definition)
-        (when_keyword)
-		(step_definition)
-        (then_keyword)
-		(step_definition)
+      (full_step
+        (step_keyword
+          (given_keyword)   
+        )
+        (step_definition)
+      )
+      (full_step
+        (step_keyword
+          (when_keyword)   
+        )
+        (step_definition)
+      )
+      (full_step
+        (step_keyword
+          (then_keyword)   
+        )
+        (step_definition)
+      )
     )
   )
 )

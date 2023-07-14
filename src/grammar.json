@@ -30,29 +30,9 @@
         }
       ]
     },
-    "given_keyword": {
-      "type": "STRING",
-      "value": "    Given "
-    },
-    "when_keyword": {
-      "type": "STRING",
-      "value": "    When "
-    },
-    "then_keyword": {
-      "type": "STRING",
-      "value": "    Then "
-    },
     "feature_keyword": {
       "type": "STRING",
       "value": "Feature: "
-    },
-    "scenario_keyword": {
-      "type": "STRING",
-      "value": "  Scenario: "
-    },
-    "example_keyword": {
-      "type": "STRING",
-      "value": "  Example: "
     },
     "title": {
       "type": "PATTERN",
@@ -78,10 +58,6 @@
           }
         }
       ]
-    },
-    "step_definition": {
-      "type": "PATTERN",
-      "value": "[^A-Z][a-z][a-z ]+\\n"
     },
     "scenario": {
       "type": "SEQ",
@@ -121,8 +97,45 @@
         }
       ]
     },
+    "scenario_keyword": {
+      "type": "STRING",
+      "value": "  Scenario: "
+    },
+    "example_keyword": {
+      "type": "STRING",
+      "value": "  Example: "
+    },
     "steps": {
       "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "full_step"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SYMBOL",
+            "name": "full_step"
+          }
+        }
+      ]
+    },
+    "full_step": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "step_keyword"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "step_definition"
+        }
+      ]
+    },
+    "step_keyword": {
+      "type": "CHOICE",
       "members": [
         {
           "type": "SYMBOL",
@@ -130,25 +143,29 @@
         },
         {
           "type": "SYMBOL",
-          "name": "step_definition"
-        },
-        {
-          "type": "SYMBOL",
           "name": "when_keyword"
         },
         {
           "type": "SYMBOL",
-          "name": "step_definition"
-        },
-        {
-          "type": "SYMBOL",
           "name": "then_keyword"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "step_definition"
         }
       ]
+    },
+    "given_keyword": {
+      "type": "STRING",
+      "value": "    Given "
+    },
+    "when_keyword": {
+      "type": "STRING",
+      "value": "    When "
+    },
+    "then_keyword": {
+      "type": "STRING",
+      "value": "    Then "
+    },
+    "step_definition": {
+      "type": "PATTERN",
+      "value": "[^A-Z][a-z][a-z ]+\\n"
     }
   },
   "extras": [
