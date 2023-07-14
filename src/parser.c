@@ -19,7 +19,7 @@
 enum {
   sym_feature_keyword = 1,
   sym_title = 2,
-  aux_sym_multiline_text_token1 = 3,
+  aux_sym_description_token1 = 3,
   anon_sym_LF = 4,
   sym_scenario_keyword = 5,
   sym_example_keyword = 6,
@@ -28,13 +28,13 @@ enum {
   sym_then_keyword = 9,
   sym_step_definition = 10,
   sym_feature = 11,
-  sym_multiline_text = 12,
+  sym_description = 12,
   sym_scenarios = 13,
   sym_scenario = 14,
   sym_steps = 15,
   sym_full_step = 16,
   sym_step_keyword = 17,
-  aux_sym_multiline_text_repeat1 = 18,
+  aux_sym_description_repeat1 = 18,
   aux_sym_scenarios_repeat1 = 19,
   aux_sym_steps_repeat1 = 20,
 };
@@ -43,7 +43,7 @@ static const char * const ts_symbol_names[] = {
   [ts_builtin_sym_end] = "end",
   [sym_feature_keyword] = "feature_keyword",
   [sym_title] = "title",
-  [aux_sym_multiline_text_token1] = "multiline_text_token1",
+  [aux_sym_description_token1] = "description_token1",
   [anon_sym_LF] = "\n",
   [sym_scenario_keyword] = "scenario_keyword",
   [sym_example_keyword] = "example_keyword",
@@ -52,13 +52,13 @@ static const char * const ts_symbol_names[] = {
   [sym_then_keyword] = "then_keyword",
   [sym_step_definition] = "step_definition",
   [sym_feature] = "feature",
-  [sym_multiline_text] = "multiline_text",
+  [sym_description] = "description",
   [sym_scenarios] = "scenarios",
   [sym_scenario] = "scenario",
   [sym_steps] = "steps",
   [sym_full_step] = "full_step",
   [sym_step_keyword] = "step_keyword",
-  [aux_sym_multiline_text_repeat1] = "multiline_text_repeat1",
+  [aux_sym_description_repeat1] = "description_repeat1",
   [aux_sym_scenarios_repeat1] = "scenarios_repeat1",
   [aux_sym_steps_repeat1] = "steps_repeat1",
 };
@@ -67,7 +67,7 @@ static const TSSymbol ts_symbol_map[] = {
   [ts_builtin_sym_end] = ts_builtin_sym_end,
   [sym_feature_keyword] = sym_feature_keyword,
   [sym_title] = sym_title,
-  [aux_sym_multiline_text_token1] = aux_sym_multiline_text_token1,
+  [aux_sym_description_token1] = aux_sym_description_token1,
   [anon_sym_LF] = anon_sym_LF,
   [sym_scenario_keyword] = sym_scenario_keyword,
   [sym_example_keyword] = sym_example_keyword,
@@ -76,13 +76,13 @@ static const TSSymbol ts_symbol_map[] = {
   [sym_then_keyword] = sym_then_keyword,
   [sym_step_definition] = sym_step_definition,
   [sym_feature] = sym_feature,
-  [sym_multiline_text] = sym_multiline_text,
+  [sym_description] = sym_description,
   [sym_scenarios] = sym_scenarios,
   [sym_scenario] = sym_scenario,
   [sym_steps] = sym_steps,
   [sym_full_step] = sym_full_step,
   [sym_step_keyword] = sym_step_keyword,
-  [aux_sym_multiline_text_repeat1] = aux_sym_multiline_text_repeat1,
+  [aux_sym_description_repeat1] = aux_sym_description_repeat1,
   [aux_sym_scenarios_repeat1] = aux_sym_scenarios_repeat1,
   [aux_sym_steps_repeat1] = aux_sym_steps_repeat1,
 };
@@ -100,7 +100,7 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = true,
   },
-  [aux_sym_multiline_text_token1] = {
+  [aux_sym_description_token1] = {
     .visible = false,
     .named = false,
   },
@@ -136,7 +136,7 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = true,
   },
-  [sym_multiline_text] = {
+  [sym_description] = {
     .visible = true,
     .named = true,
   },
@@ -160,7 +160,7 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = true,
   },
-  [aux_sym_multiline_text_repeat1] = {
+  [aux_sym_description_repeat1] = {
     .visible = false,
     .named = false,
   },
@@ -455,10 +455,10 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       ACCEPT_TOKEN(sym_title);
       END_STATE();
     case 56:
-      ACCEPT_TOKEN(aux_sym_multiline_text_token1);
+      ACCEPT_TOKEN(aux_sym_description_token1);
       END_STATE();
     case 57:
-      ACCEPT_TOKEN(aux_sym_multiline_text_token1);
+      ACCEPT_TOKEN(aux_sym_description_token1);
       if (lookahead == '\n') ADVANCE(70);
       if (lookahead == ' ') ADVANCE(61);
       if (lookahead == '\t' ||
@@ -466,7 +466,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead != 0) ADVANCE(56);
       END_STATE();
     case 58:
-      ACCEPT_TOKEN(aux_sym_multiline_text_token1);
+      ACCEPT_TOKEN(aux_sym_description_token1);
       if (lookahead == '\n') ADVANCE(70);
       if (lookahead == ' ') ADVANCE(58);
       if (lookahead == 'G') ADVANCE(68);
@@ -477,7 +477,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead != 0) ADVANCE(56);
       END_STATE();
     case 59:
-      ACCEPT_TOKEN(aux_sym_multiline_text_token1);
+      ACCEPT_TOKEN(aux_sym_description_token1);
       if (lookahead == '\n') ADVANCE(70);
       if (lookahead == ' ') ADVANCE(58);
       if (lookahead == '\t' ||
@@ -485,7 +485,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead != 0) ADVANCE(56);
       END_STATE();
     case 60:
-      ACCEPT_TOKEN(aux_sym_multiline_text_token1);
+      ACCEPT_TOKEN(aux_sym_description_token1);
       if (lookahead == '\n') ADVANCE(70);
       if (lookahead == ' ') ADVANCE(59);
       if (lookahead == '\t' ||
@@ -493,7 +493,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead != 0) ADVANCE(56);
       END_STATE();
     case 61:
-      ACCEPT_TOKEN(aux_sym_multiline_text_token1);
+      ACCEPT_TOKEN(aux_sym_description_token1);
       if (lookahead == '\n') ADVANCE(70);
       if (lookahead == ' ') ADVANCE(60);
       if (lookahead == '\t' ||
@@ -501,7 +501,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead != 0) ADVANCE(56);
       END_STATE();
     case 62:
-      ACCEPT_TOKEN(aux_sym_multiline_text_token1);
+      ACCEPT_TOKEN(aux_sym_description_token1);
       if (lookahead == '\n') ADVANCE(71);
       if (lookahead == ' ') ADVANCE(62);
       if (lookahead == 'E') ADVANCE(69);
@@ -511,7 +511,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead != 0) ADVANCE(56);
       END_STATE();
     case 63:
-      ACCEPT_TOKEN(aux_sym_multiline_text_token1);
+      ACCEPT_TOKEN(aux_sym_description_token1);
       if (lookahead == '\n') ADVANCE(71);
       if (lookahead == ' ') ADVANCE(62);
       if (lookahead == '\t' ||
@@ -519,7 +519,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead != 0) ADVANCE(56);
       END_STATE();
     case 64:
-      ACCEPT_TOKEN(aux_sym_multiline_text_token1);
+      ACCEPT_TOKEN(aux_sym_description_token1);
       if (lookahead == '\n') ADVANCE(71);
       if (lookahead == ' ') ADVANCE(63);
       if (lookahead == '\t' ||
@@ -527,23 +527,23 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead != 0) ADVANCE(56);
       END_STATE();
     case 65:
-      ACCEPT_TOKEN(aux_sym_multiline_text_token1);
+      ACCEPT_TOKEN(aux_sym_description_token1);
       if (lookahead == 'c') ADVANCE(25);
       END_STATE();
     case 66:
-      ACCEPT_TOKEN(aux_sym_multiline_text_token1);
+      ACCEPT_TOKEN(aux_sym_description_token1);
       if (lookahead == 'h') ADVANCE(27);
       END_STATE();
     case 67:
-      ACCEPT_TOKEN(aux_sym_multiline_text_token1);
+      ACCEPT_TOKEN(aux_sym_description_token1);
       if (lookahead == 'h') ADVANCE(28);
       END_STATE();
     case 68:
-      ACCEPT_TOKEN(aux_sym_multiline_text_token1);
+      ACCEPT_TOKEN(aux_sym_description_token1);
       if (lookahead == 'i') ADVANCE(47);
       END_STATE();
     case 69:
-      ACCEPT_TOKEN(aux_sym_multiline_text_token1);
+      ACCEPT_TOKEN(aux_sym_description_token1);
       if (lookahead == 'x') ADVANCE(21);
       END_STATE();
     case 70:
@@ -631,17 +631,17 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
 static const uint16_t ts_small_parse_table[] = {
   [0] = 7,
     STATE(7), 1,
-      aux_sym_multiline_text_repeat1,
+      aux_sym_description_repeat1,
     STATE(9), 1,
       sym_full_step,
     STATE(10), 1,
-      sym_multiline_text,
+      sym_description,
     STATE(16), 1,
       sym_steps,
     STATE(21), 1,
       sym_step_keyword,
     ACTIONS(5), 2,
-      aux_sym_multiline_text_token1,
+      aux_sym_description_token1,
       anon_sym_LF,
     ACTIONS(7), 3,
       sym_given_keyword,
@@ -649,13 +649,13 @@ static const uint16_t ts_small_parse_table[] = {
       sym_then_keyword,
   [25] = 6,
     STATE(14), 1,
-      aux_sym_multiline_text_repeat1,
+      aux_sym_description_repeat1,
     STATE(15), 1,
-      sym_multiline_text,
+      sym_description,
     STATE(22), 1,
       sym_scenarios,
     ACTIONS(9), 2,
-      aux_sym_multiline_text_token1,
+      aux_sym_description_token1,
       anon_sym_LF,
     ACTIONS(11), 2,
       sym_scenario_keyword,
@@ -693,9 +693,9 @@ static const uint16_t ts_small_parse_table[] = {
       sym_then_keyword,
   [83] = 3,
     STATE(6), 1,
-      aux_sym_multiline_text_repeat1,
+      aux_sym_description_repeat1,
     ACTIONS(22), 2,
-      aux_sym_multiline_text_token1,
+      aux_sym_description_token1,
       anon_sym_LF,
     ACTIONS(25), 3,
       sym_given_keyword,
@@ -703,9 +703,9 @@ static const uint16_t ts_small_parse_table[] = {
       sym_then_keyword,
   [96] = 3,
     STATE(6), 1,
-      aux_sym_multiline_text_repeat1,
+      aux_sym_description_repeat1,
     ACTIONS(27), 2,
-      aux_sym_multiline_text_token1,
+      aux_sym_description_token1,
       anon_sym_LF,
     ACTIONS(29), 3,
       sym_given_keyword,
@@ -742,12 +742,12 @@ static const uint16_t ts_small_parse_table[] = {
       sym_then_keyword,
   [146] = 3,
     STATE(11), 1,
-      aux_sym_multiline_text_repeat1,
+      aux_sym_description_repeat1,
     ACTIONS(25), 2,
       sym_scenario_keyword,
       sym_example_keyword,
     ACTIONS(33), 2,
-      aux_sym_multiline_text_token1,
+      aux_sym_description_token1,
       anon_sym_LF,
   [158] = 3,
     ACTIONS(36), 1,
@@ -769,12 +769,12 @@ static const uint16_t ts_small_parse_table[] = {
       aux_sym_scenarios_repeat1,
   [182] = 3,
     STATE(11), 1,
-      aux_sym_multiline_text_repeat1,
+      aux_sym_description_repeat1,
     ACTIONS(29), 2,
       sym_scenario_keyword,
       sym_example_keyword,
     ACTIONS(45), 2,
-      aux_sym_multiline_text_token1,
+      aux_sym_description_token1,
       anon_sym_LF,
   [194] = 3,
     STATE(18), 1,
@@ -856,12 +856,12 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [15] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_steps_repeat1, 2), SHIFT_REPEAT(19),
   [18] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_steps, 2),
   [20] = {.entry = {.count = 1, .reusable = true}}, SHIFT(19),
-  [22] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_multiline_text_repeat1, 2), SHIFT_REPEAT(6),
-  [25] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym_multiline_text_repeat1, 2),
+  [22] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_description_repeat1, 2), SHIFT_REPEAT(6),
+  [25] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym_description_repeat1, 2),
   [27] = {.entry = {.count = 1, .reusable = false}}, SHIFT(6),
-  [29] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_multiline_text, 1),
+  [29] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_description, 1),
   [31] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_full_step, 2),
-  [33] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_multiline_text_repeat1, 2), SHIFT_REPEAT(11),
+  [33] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_description_repeat1, 2), SHIFT_REPEAT(11),
   [36] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_scenarios_repeat1, 2),
   [38] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_scenarios_repeat1, 2), SHIFT_REPEAT(23),
   [41] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_scenarios, 1),

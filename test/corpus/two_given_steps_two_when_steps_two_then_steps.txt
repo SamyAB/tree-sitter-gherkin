@@ -7,7 +7,7 @@ Feature: This is the name of a feature
     Given this is a given step
     Given this is another given step
     When this is a when step
-    When this is anoter when step
+    When this is another when step
     Then this is a then step
     Then this is another then step
 

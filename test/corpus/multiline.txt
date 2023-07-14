@@ -26,12 +26,12 @@ Feature: This is the name of a feature
 (feature
   (feature_keyword)
   (title)
-  (multiline_text)
+  (description)
   (scenarios
     (scenario
       (scenario_keyword)
       (title)
-      (multiline_text)
+      (description)
       (steps
         (full_step
           (step_keyword

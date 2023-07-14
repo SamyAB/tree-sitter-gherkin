@@ -17,7 +17,7 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "multiline_text"
+              "name": "description"
             },
             {
               "type": "BLANK"
@@ -38,7 +38,7 @@
       "type": "PATTERN",
       "value": "[A-Z][a-zA-Z ]+\\n"
     },
-    "multiline_text": {
+    "description": {
       "type": "SEQ",
       "members": [
         {
@@ -91,7 +91,7 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "multiline_text"
+              "name": "description"
             },
             {
               "type": "BLANK"

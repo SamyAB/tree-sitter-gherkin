@@ -5,7 +5,7 @@ module.exports = grammar({
     feature: $ => seq(
       $.feature_keyword,
       $.title,
-      optional($.multiline_text),
+      optional($.description),
       $.scenarios
     ),
 
@@ -13,7 +13,7 @@ module.exports = grammar({
 
     title: $ => /[A-Z][a-zA-Z ]+\n/,
 
-    multiline_text: $ => seq(
+    description: $ => seq(
       repeat1(
         choice(
           /[^\n]/,
@@ -30,7 +30,7 @@ module.exports = grammar({
         $.example_keyword,
       ),
       $.title,
-      optional($.multiline_text),
+      optional($.description),
       $.steps,
     ),
 

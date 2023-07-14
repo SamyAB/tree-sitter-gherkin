@@ -1,5 +1,10 @@
 [
   {
+    "type": "description",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "feature",
     "named": true,
     "fields": {},
@@ -8,11 +13,11 @@
       "required": true,
       "types": [
         {
-          "type": "feature_keyword",
+          "type": "description",
           "named": true
         },
         {
-          "type": "multiline_text",
+          "type": "feature_keyword",
           "named": true
         },
         {
@@ -46,11 +51,6 @@
     }
   },
   {
-    "type": "multiline_text",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "scenario",
     "named": true,
     "fields": {},
@@ -59,11 +59,11 @@
       "required": true,
       "types": [
         {
-          "type": "example_keyword",
+          "type": "description",
           "named": true
         },
         {
-          "type": "multiline_text",
+          "type": "example_keyword",
           "named": true
         },
         {
