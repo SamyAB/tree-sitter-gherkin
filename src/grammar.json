@@ -163,6 +163,10 @@
         {
           "type": "SYMBOL",
           "name": "but_keyword"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "asterisk_keyword"
         }
       ]
     },
@@ -185,6 +189,10 @@
     "but_keyword": {
       "type": "STRING",
       "value": "    But "
+    },
+    "asterisk_keyword": {
+      "type": "STRING",
+      "value": "    * "
     },
     "step_definition": {
       "type": "PATTERN",

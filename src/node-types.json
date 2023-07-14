@@ -109,6 +109,10 @@
           "named": true
         },
         {
+          "type": "asterisk_keyword",
+          "named": true
+        },
+        {
           "type": "but_keyword",
           "named": true
         },
@@ -148,6 +152,10 @@
   },
   {
     "type": "and_keyword",
+    "named": true
+  },
+  {
+    "type": "asterisk_keyword",
     "named": true
   },
   {

@@ -1,0 +1,63 @@
+==============
+Asterisk steps
+==============
+
+Feature: This is the name of a feature
+  Scenario: This is the title of a scenario
+    Given this is a given step
+    * this an step used when listing
+    * this another step used when listing
+    * and this is also step used when listing
+    When this is a when step
+    Then this is a then step
+
+---
+
+(feature
+  (feature_keyword)
+  (title)
+  (scenarios
+    (scenario
+      (scenario_keyword)
+      (title)
+      (steps
+        (full_step
+          (step_keyword
+            (given_keyword)
+          )
+          (step_definition)
+        )
+        (full_step
+          (step_keyword
+            (asterisk_keyword)
+          )
+          (step_definition)
+        )
+        (full_step
+          (step_keyword
+            (asterisk_keyword)
+          )
+          (step_definition)
+        )
+        (full_step
+          (step_keyword
+            (asterisk_keyword)
+          )
+          (step_definition)
+        )
+        (full_step
+          (step_keyword
+            (when_keyword)
+          )
+          (step_definition)
+        )
+        (full_step
+          (step_keyword
+            (then_keyword)
+          )
+          (step_definition)
+        )
+      )
+    )
+  )
+)
