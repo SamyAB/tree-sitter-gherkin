@@ -134,10 +134,56 @@
       }
     },
     "scenarios": {
-      "type": "REPEAT1",
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "background"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SYMBOL",
+            "name": "scenario"
+          }
+        }
+      ]
+    },
+    "background": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "background_keyword"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "given_steps"
+        }
+      ]
+    },
+    "background_keyword": {
+      "type": "TOKEN",
       "content": {
-        "type": "SYMBOL",
-        "name": "scenario"
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "Background"
+          },
+          {
+            "type": "STRING",
+            "value": ":"
+          }
+        ]
       }
     },
     "scenario": {

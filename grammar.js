@@ -47,7 +47,22 @@ module.exports = grammar({
       )
     ),
 
-    scenarios: $ => repeat1($.scenario),
+    scenarios: $ => seq(
+      optional($.background),
+      repeat1($.scenario),
+    ),
+
+    background: $ => seq(
+      $.background_keyword,
+      $.given_steps,
+    ),
+
+    background_keyword: $ => token(
+      seq(
+        'Background',
+        ':',
+      ),
+    ),
     
     scenario: $ => seq(
       $.scenario_keyword,

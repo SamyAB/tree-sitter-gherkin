@@ -1,0 +1,52 @@
+===================================
+Background with a single given step
+===================================
+
+Feature: This is the name of a feature
+  Background:
+    Given this should be done before each scenario
+
+  Scenario: This is the title of a scenario
+    Given this is a given step
+    When this is a when step
+    Then this is a then step
+
+---
+
+(feature
+  (feature_keyword)
+  (title)
+  (scenarios
+	(background
+	  (background_keyword)
+	  (given_steps
+	    (given_step
+		  (given_keyword)
+		  (step_definition)
+		)
+	  )
+	)
+    (scenario
+      (scenario_keyword)
+      (title)
+      (steps
+        (given_steps
+          (given_step
+            (given_keyword)
+            (step_definition)
+          )
+        )
+        (when_step
+          (when_keyword)
+          (step_definition)
+        )
+        (then_steps
+          (then_step
+            (then_keyword)
+            (step_definition)
+          )
+        )
+      )
+    )
+  )
+)

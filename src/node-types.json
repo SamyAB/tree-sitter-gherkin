@@ -42,6 +42,25 @@
     }
   },
   {
+    "type": "background",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "background_keyword",
+          "named": true
+        },
+        {
+          "type": "given_steps",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "description",
     "named": true,
     "fields": {}
@@ -193,6 +212,10 @@
       "required": true,
       "types": [
         {
+          "type": "background",
+          "named": true
+        },
+        {
           "type": "scenario",
           "named": true
         }
@@ -289,6 +312,10 @@
   },
   {
     "type": "asterisk_keyword",
+    "named": true
+  },
+  {
+    "type": "background_keyword",
     "named": true
   },
   {
