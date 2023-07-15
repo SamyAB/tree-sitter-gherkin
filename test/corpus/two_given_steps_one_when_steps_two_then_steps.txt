@@ -17,7 +17,7 @@ Feature: This is the name of a feature
   (title)
   (scenarios
     (scenario
-      (example_keyword)
+      (scenario_keyword)
       (title)
       (steps
         (given_steps

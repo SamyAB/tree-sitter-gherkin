@@ -19,10 +19,11 @@ To make this grammar complete (for english) we need to add
 - [x] Support for `And` and `But` keywords for steps
 - [x] Support for `*` keyword for steps
 - [x] Support ordering enforcement for steps
-- [ ] Support for `Backgroud`s
+- [x] Support for both spaces and tabs as optional indentations indentations
 - [ ] Support for `Rule`s
+- [ ] Support for `Backgroud`s
+- [ ] Support for '#' comments
+- [ ] Support for '@' tags"
 - [ ] Support for `Scenario Outline`s
 - [ ] Support for using the keyword `Scenario Template` instead of `Senario Outline`
 - [ ] Support for `"""` doc strings
-- [ ] Support for '#' comments
-- [ ] Support for '@' tags"

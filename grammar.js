@@ -1,6 +1,8 @@
 module.exports = grammar({
   name: 'gherkin',
 
+  word: $ => $.alpha_word,
+  
   rules: {
     feature: $ => seq(
       $.feature_keyword,
@@ -9,7 +11,12 @@ module.exports = grammar({
       $.scenarios
     ),
 
-    feature_keyword: $ => 'Feature: ',
+    feature_keyword: $ => token(
+      seq(
+        'Feature', 
+        ':'
+      )
+    ),
 
     title: $ => /[A-Z][a-zA-Z ]+\n/,
 
@@ -25,17 +32,21 @@ module.exports = grammar({
     scenarios: $ => repeat1($.scenario),
     
     scenario: $ => seq(
-      choice(
-        $.scenario_keyword,
-        $.example_keyword,
-      ),
+      $.scenario_keyword,
       $.title,
       optional($.description),
       $.steps,
     ),
 
-    scenario_keyword: $ => '  Scenario: ',
-    example_keyword: $ => '  Example: ',
+    scenario_keyword: $ => token(
+      seq(
+        choice(
+          'Scenario', 
+          'Example',
+        ),
+        ':',
+      ),
+    ),
 
     steps: $ => seq(
       optional($.given_steps),
@@ -86,13 +97,14 @@ module.exports = grammar({
       $.asterisk_keyword,
     ),
 
-    given_keyword: $ => '    Given ',
-    when_keyword: $ => '    When ',
-    then_keyword: $ => '    Then ',
-    and_keyword: $ => '    And ',
-    but_keyword: $ => '    But ',
-    asterisk_keyword: $ => '    * ',
+    given_keyword: $ => 'Given ',
+    when_keyword: $ => 'When ',
+    then_keyword: $ => 'Then ',
+    and_keyword: $ => 'And ',
+    but_keyword: $ => 'But ',
+    asterisk_keyword: $ => '* ',
 
     step_definition: $ => /[^A-Z][a-z][a-z ]+\n/,
+    alpha_word: $ => /[A-Za-z][a-z]*/
   }
 });

@@ -1,5 +1,6 @@
 {
   "name": "gherkin",
+  "word": "alpha_word",
   "rules": {
     "feature": {
       "type": "SEQ",
@@ -31,8 +32,20 @@
       ]
     },
     "feature_keyword": {
-      "type": "STRING",
-      "value": "Feature: "
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "Feature"
+          },
+          {
+            "type": "STRING",
+            "value": ":"
+          }
+        ]
+      }
     },
     "title": {
       "type": "PATTERN",
@@ -70,17 +83,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "scenario_keyword"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "example_keyword"
-            }
-          ]
+          "type": "SYMBOL",
+          "name": "scenario_keyword"
         },
         {
           "type": "SYMBOL",
@@ -105,12 +109,29 @@
       ]
     },
     "scenario_keyword": {
-      "type": "STRING",
-      "value": "  Scenario: "
-    },
-    "example_keyword": {
-      "type": "STRING",
-      "value": "  Example: "
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "Scenario"
+              },
+              {
+                "type": "STRING",
+                "value": "Example"
+              }
+            ]
+          },
+          {
+            "type": "STRING",
+            "value": ":"
+          }
+        ]
+      }
     },
     "steps": {
       "type": "SEQ",
@@ -258,31 +279,35 @@
     },
     "given_keyword": {
       "type": "STRING",
-      "value": "    Given "
+      "value": "Given "
     },
     "when_keyword": {
       "type": "STRING",
-      "value": "    When "
+      "value": "When "
     },
     "then_keyword": {
       "type": "STRING",
-      "value": "    Then "
+      "value": "Then "
     },
     "and_keyword": {
       "type": "STRING",
-      "value": "    And "
+      "value": "And "
     },
     "but_keyword": {
       "type": "STRING",
-      "value": "    But "
+      "value": "But "
     },
     "asterisk_keyword": {
       "type": "STRING",
-      "value": "    * "
+      "value": "* "
     },
     "step_definition": {
       "type": "PATTERN",
       "value": "[^A-Z][a-z][a-z ]+\\n"
+    },
+    "alpha_word": {
+      "type": "PATTERN",
+      "value": "[A-Za-z][a-z]*"
     }
   },
   "extras": [

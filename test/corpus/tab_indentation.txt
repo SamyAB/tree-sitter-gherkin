@@ -1,12 +1,12 @@
-===========================
-Example instead of scenario
-===========================
+===============
+Tab indentation
+===============
 
 Feature: This is the name of a feature
-  Example: This is the title of a scenario
-    Given this is a given step
-    When this is a when step
-    Then this is a then step
+	Scenario: This is the title of a scenario
+		Given this is a given step
+		When this is a when step
+		Then this is a then step
 
 ---
 

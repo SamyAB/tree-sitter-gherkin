@@ -124,10 +124,6 @@
           "named": true
         },
         {
-          "type": "example_keyword",
-          "named": true
-        },
-        {
           "type": "scenario_keyword",
           "named": true
         },
@@ -251,10 +247,6 @@
   },
   {
     "type": "but_keyword",
-    "named": true
-  },
-  {
-    "type": "example_keyword",
     "named": true
   },
   {
