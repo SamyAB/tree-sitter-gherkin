@@ -63,6 +63,10 @@
           "named": true
         },
         {
+          "type": "rules",
+          "named": true
+        },
+        {
           "type": "scenarios",
           "named": true
         },
@@ -106,6 +110,48 @@
         },
         {
           "type": "given_step",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "rule",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "description",
+          "named": true
+        },
+        {
+          "type": "rule_keyword",
+          "named": true
+        },
+        {
+          "type": "scenarios",
+          "named": true
+        },
+        {
+          "type": "title",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "rules",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "rule",
           "named": true
         }
       ]
@@ -255,6 +301,10 @@
   },
   {
     "type": "given_keyword",
+    "named": true
+  },
+  {
+    "type": "rule_keyword",
     "named": true
   },
   {

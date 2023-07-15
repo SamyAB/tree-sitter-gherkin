@@ -1,0 +1,114 @@
+=================================================================================
+Two rules one with a single scenario and one with a description and two scenarios
+=================================================================================
+
+Feature: This is the name of a feature
+
+  Rule: This a first rule
+
+    Scenario: This is the title of a scenario
+      Given this is a given step
+      When this is a when step
+      Then this is a then step
+
+  Rule: This is a second rule
+
+  This one has a description and two scenarios
+
+    Scenario: This is the title of a scenario
+      Given this is a given step
+      When this is a when step
+      Then this is a then step
+
+    Scenario: This is the title of the second scenario
+      Given this is a given step
+      When this is a when step
+      Then this is a then step
+
+---
+
+(feature
+  (feature_keyword)
+  (title)
+  (rules
+    (rule
+      (rule_keyword)
+      (title)
+      (scenarios
+        (scenario
+          (scenario_keyword)
+          (title)
+          (steps
+            (given_steps
+              (given_step
+                (given_keyword)
+                (step_definition)
+              )
+            )
+            (when_step
+              (when_keyword)
+              (step_definition)
+            )
+            (then_steps
+              (then_step
+                (then_keyword)
+                (step_definition)
+              )
+            )
+          )
+        )
+      )
+    )
+    (rule
+      (rule_keyword)
+      (title)
+      (description)
+      (scenarios
+        (scenario
+          (scenario_keyword)
+          (title)
+          (steps
+            (given_steps
+              (given_step
+                (given_keyword)
+                (step_definition)
+              )
+            )
+            (when_step
+              (when_keyword)
+              (step_definition)
+            )
+            (then_steps
+              (then_step
+                (then_keyword)
+                (step_definition)
+              )
+            )
+          )
+        )
+        (scenario
+          (scenario_keyword)
+          (title)
+          (steps
+            (given_steps
+              (given_step
+                (given_keyword)
+                (step_definition)
+              )
+            )
+            (when_step
+              (when_keyword)
+              (step_definition)
+            )
+            (then_steps
+              (then_step
+                (then_keyword)
+                (step_definition)
+              )
+            )
+          )
+        )
+      )
+    )
+  )
+)

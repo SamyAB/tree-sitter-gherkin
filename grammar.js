@@ -8,7 +8,10 @@ module.exports = grammar({
       $.feature_keyword,
       $.title,
       optional($.description),
-      $.scenarios
+      choice(
+        $.rules,
+        $.scenarios,
+      ),
     ),
 
     feature_keyword: $ => token(
@@ -26,6 +29,21 @@ module.exports = grammar({
           /[^\n]/,
           '\n',
         )
+      )
+    ),
+
+    rules: $ => repeat1($.rule),
+    rule: $ => seq(
+      $.rule_keyword,
+      $.title,
+      optional($.description),
+      $.scenarios,
+    ),
+
+    rule_keyword: $ => token(
+      seq(
+        'Rule',
+        ':',
       )
     ),
 

@@ -20,7 +20,7 @@ To make this grammar complete (for english) we need to add
 - [x] Support for `*` keyword for steps
 - [x] Support ordering enforcement for steps
 - [x] Support for both spaces and tabs as optional indentations indentations
-- [ ] Support for `Rule`s
+- [x] Support for `Rule`s
 - [ ] Support for `Backgroud`s
 - [ ] Support for '#' comments
 - [ ] Support for '@' tags"

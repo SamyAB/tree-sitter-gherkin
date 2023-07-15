@@ -26,8 +26,17 @@
           ]
         },
         {
-          "type": "SYMBOL",
-          "name": "scenarios"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "rules"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "scenarios"
+            }
+          ]
         }
       ]
     },
@@ -71,6 +80,58 @@
           }
         }
       ]
+    },
+    "rules": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "SYMBOL",
+        "name": "rule"
+      }
+    },
+    "rule": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "rule_keyword"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "title"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "description"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "scenarios"
+        }
+      ]
+    },
+    "rule_keyword": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "Rule"
+          },
+          {
+            "type": "STRING",
+            "value": ":"
+          }
+        ]
+      }
     },
     "scenarios": {
       "type": "REPEAT1",
