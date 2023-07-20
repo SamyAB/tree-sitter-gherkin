@@ -1,6 +1,6 @@
 {
   "name": "gherkin",
-  "word": "alpha_word",
+  "word": "_alpha_word",
   "rules": {
     "feature": {
       "type": "SEQ",
@@ -58,11 +58,15 @@
     },
     "title": {
       "type": "PATTERN",
-      "value": "[A-Z][a-zA-Z ]+\\n"
+      "value": "[A-Z][a-zA-Z ]+"
     },
     "description": {
       "type": "SEQ",
       "members": [
+        {
+          "type": "PATTERN",
+          "value": "[^\\s#]"
+        },
         {
           "type": "REPEAT1",
           "content": {
@@ -70,7 +74,7 @@
             "members": [
               {
                 "type": "PATTERN",
-                "value": "[^\\n]"
+                "value": "[^\\n#]"
               },
               {
                 "type": "STRING",
@@ -410,14 +414,34 @@
     },
     "step_definition": {
       "type": "PATTERN",
-      "value": "[^A-Z][a-z][a-z ]+\\n"
+      "value": "[^A-Z][a-z][a-z ]+"
     },
-    "alpha_word": {
+    "_alpha_word": {
       "type": "PATTERN",
       "value": "[A-Za-z][a-z]*"
+    },
+    "comment": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "#"
+          },
+          {
+            "type": "PATTERN",
+            "value": ".*"
+          }
+        ]
+      }
     }
   },
   "extras": [
+    {
+      "type": "SYMBOL",
+      "name": "comment"
+    },
     {
       "type": "PATTERN",
       "value": "\\s"

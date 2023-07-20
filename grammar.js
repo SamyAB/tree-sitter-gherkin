@@ -1,7 +1,12 @@
+
 module.exports = grammar({
   name: 'gherkin',
 
-  word: $ => $.alpha_word,
+  word: $ => $._alpha_word,
+  extras: $ => [
+    $.comment,
+    /\s/,
+  ],
   
   rules: {
     feature: $ => seq(
@@ -21,12 +26,13 @@ module.exports = grammar({
       )
     ),
 
-    title: $ => /[A-Z][a-zA-Z ]+\n/,
+    title: $ => /[A-Z][a-zA-Z ]+/,
 
     description: $ => seq(
+      /[^\s#]/,
       repeat1(
         choice(
-          /[^\n]/,
+          /[^\n#]/,
           '\n',
         )
       )
@@ -137,7 +143,9 @@ module.exports = grammar({
     but_keyword: $ => 'But ',
     asterisk_keyword: $ => '* ',
 
-    step_definition: $ => /[^A-Z][a-z][a-z ]+\n/,
-    alpha_word: $ => /[A-Za-z][a-z]*/
+    step_definition: $ => /[^A-Z][a-z][a-z ]+/,
+    _alpha_word: $ => /[A-Za-z][a-z]*/,
+    
+    comment: $ => token(seq('#', /.*/)),
   }
 });

@@ -1,0 +1,42 @@
+=================
+Full line comment
+=================
+
+Feature: This is the name of a feature
+  # This is a full line comment
+  Scenario: This is the title of a scenario
+    Given this is a given step
+    When this is a when step
+    Then this is a then step
+
+---
+
+(feature
+  (feature_keyword)
+  (title)
+  (comment)
+  (scenarios
+    (scenario
+      (scenario_keyword)
+      (title)
+      (steps
+        (given_steps
+          (given_step
+            (given_keyword)
+            (step_definition)
+          )
+        )
+        (when_step
+          (when_keyword)
+          (step_definition)
+        )
+        (then_steps
+          (then_step
+            (then_keyword)
+            (step_definition)
+          )
+        )
+      )
+    )
+  )
+)

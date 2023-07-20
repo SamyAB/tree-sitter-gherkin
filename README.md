@@ -22,7 +22,7 @@ To make this grammar complete (for english) we need to add
 - [x] Support for both spaces and tabs as optional indentations indentations
 - [x] Support for `Rule`s
 - [x] Support for `Backgroud`s
-- [ ] Support for '#' comments
+- [x] Support for '#' comments
 - [ ] Support for '@' tags"
 - [ ] Support for `Scenario Outline`s
 - [ ] Support for using the keyword `Scenario Template` instead of `Senario Outline`

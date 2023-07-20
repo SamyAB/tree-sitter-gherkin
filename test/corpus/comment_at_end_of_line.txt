@@ -1,0 +1,43 @@
+======================
+Comment at end of line
+======================
+
+Feature: This is the name of a feature # This a comment at the end of line
+  Scenario: This is the title of a scenario # This is also a comment at the end of line
+    Given this is a given step # 87897
+    When this is a when step
+    Then this is a then step
+
+---
+
+(feature
+  (feature_keyword)
+  (title)
+  (comment)
+  (scenarios
+    (scenario
+      (scenario_keyword)
+      (title)
+	  (comment)
+      (steps
+        (given_steps
+          (given_step
+            (given_keyword)
+            (step_definition)
+          )
+        )
+		(comment)
+        (when_step
+          (when_keyword)
+          (step_definition)
+        )
+        (then_steps
+          (then_step
+            (then_keyword)
+            (step_definition)
+          )
+        )
+      )
+    )
+  )
+)
