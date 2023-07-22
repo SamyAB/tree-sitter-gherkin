@@ -1,0 +1,71 @@
+=============
+Tag scenarios
+=============
+
+Feature: This is the name of a feature
+  @this_is_a_first_tag
+  Scenario: This is the title of a scenario
+    Given this is a given step
+    When this is a when step
+    Then this is a then step
+
+  @this_is_a_second_tag
+  Scenario: This is the title of a scenario
+    Given this is a given step
+    When this is a when step
+    Then this is a then step
+
+---
+
+(feature
+  (feature_keyword)
+  (title)
+  (scenarios
+    (scenario
+	  (tag)
+      (scenario_keyword)
+      (title)
+      (steps
+        (given_steps
+          (given_step
+            (given_keyword)
+            (step_definition)
+          )
+        )
+        (when_step
+          (when_keyword)
+          (step_definition)
+        )
+        (then_steps
+          (then_step
+            (then_keyword)
+            (step_definition)
+          )
+        )
+      )
+    )
+    (scenario
+	  (tag)
+      (scenario_keyword)
+      (title)
+      (steps
+        (given_steps
+          (given_step
+            (given_keyword)
+            (step_definition)
+          )
+        )
+        (when_step
+          (when_keyword)
+          (step_definition)
+        )
+        (then_steps
+          (then_step
+            (then_keyword)
+            (step_definition)
+          )
+        )
+      )
+    )
+  )
+)

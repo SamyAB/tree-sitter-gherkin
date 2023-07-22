@@ -7,9 +7,13 @@ module.exports = grammar({
     $.comment,
     /\s/,
   ],
+  conflicts: $ => [
+    [$.scenarios],
+  ],
   
   rules: {
     feature: $ => seq(
+      optional($.tag),
       $.feature_keyword,
       $.title,
       optional($.description),
@@ -18,6 +22,11 @@ module.exports = grammar({
         $.scenarios,
       ),
     ),
+
+    tag: $ => token(seq(
+      '@',
+      /[a-z_]+/,
+    )),
 
     feature_keyword: $ => token(
       seq(
@@ -40,6 +49,7 @@ module.exports = grammar({
 
     rules: $ => repeat1($.rule),
     rule: $ => seq(
+      optional($.tag),
       $.rule_keyword,
       $.title,
       optional($.description),
@@ -71,6 +81,7 @@ module.exports = grammar({
     ),
     
     scenario: $ => seq(
+      optional($.tag),
       $.scenario_keyword,
       $.title,
       optional($.description),

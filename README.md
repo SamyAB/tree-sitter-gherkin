@@ -23,7 +23,8 @@ To make this grammar complete (for english) we need to add
 - [x] Support for `Rule`s
 - [x] Support for `Backgroud`s
 - [x] Support for '#' comments
-- [ ] Support for '@' tags"
+- [x] Support for '@' tags"
 - [ ] Support for `Scenario Outline`s
 - [ ] Support for using the keyword `Scenario Template` instead of `Senario Outline`
 - [ ] Support for `"""` doc strings
+- [ ] Add [syntaxe highlight testing](https://tree-sitter.github.io/tree-sitter/syntax-highlighting#unit-testing)

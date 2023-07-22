@@ -90,6 +90,10 @@
           "named": true
         },
         {
+          "type": "tag",
+          "named": true
+        },
+        {
           "type": "title",
           "named": true
         }
@@ -155,6 +159,10 @@
           "named": true
         },
         {
+          "type": "tag",
+          "named": true
+        },
+        {
           "type": "title",
           "named": true
         }
@@ -194,6 +202,10 @@
         },
         {
           "type": "steps",
+          "named": true
+        },
+        {
+          "type": "tag",
           "named": true
         },
         {
@@ -344,6 +356,10 @@
   },
   {
     "type": "step_definition",
+    "named": true
+  },
+  {
+    "type": "tag",
     "named": true
   },
   {

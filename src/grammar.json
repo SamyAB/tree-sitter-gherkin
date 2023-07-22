@@ -6,6 +6,18 @@
       "type": "SEQ",
       "members": [
         {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "tag"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
           "type": "SYMBOL",
           "name": "feature_keyword"
         },
@@ -39,6 +51,22 @@
           ]
         }
       ]
+    },
+    "tag": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "@"
+          },
+          {
+            "type": "PATTERN",
+            "value": "[a-z_]+"
+          }
+        ]
+      }
     },
     "feature_keyword": {
       "type": "TOKEN",
@@ -95,6 +123,18 @@
     "rule": {
       "type": "SEQ",
       "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "tag"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
         {
           "type": "SYMBOL",
           "name": "rule_keyword"
@@ -193,6 +233,18 @@
     "scenario": {
       "type": "SEQ",
       "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "tag"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
         {
           "type": "SYMBOL",
           "name": "scenario_keyword"
@@ -447,7 +499,11 @@
       "value": "\\s"
     }
   ],
-  "conflicts": [],
+  "conflicts": [
+    [
+      "scenarios"
+    ]
+  ],
   "precedences": [],
   "externals": [],
   "inline": [],
