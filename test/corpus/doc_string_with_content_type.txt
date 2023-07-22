@@ -1,12 +1,12 @@
-======================================
-Doc string with back tick on when step
-======================================
+============================
+Doc string with content type
+============================
 
 Feature: This is the name of a feature
   Scenario: This is the title of a scenario
     Given this is a given step
     When this is a when step
-	  ```
+	  ```markdown
 	  This also is a doc string
       step parameter.
 	  It is delimited with backticks
@@ -35,6 +35,7 @@ Feature: This is the name of a feature
 		  (step_arguments
 		    (doc_string
 			  (doc_string_delimiter)
+			  (doc_string_content_type)
 			  (doc_string_content)
 			  (doc_string_delimiter)
 			)

@@ -72,6 +72,39 @@
   {
     "type": "doc_string",
     "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "doc_string_content",
+          "named": true
+        },
+        {
+          "type": "doc_string_content_type",
+          "named": true
+        },
+        {
+          "type": "doc_string_delimiter",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "doc_string_content",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "doc_string_content_type",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "doc_string_delimiter",
+    "named": true,
     "fields": {}
   },
   {

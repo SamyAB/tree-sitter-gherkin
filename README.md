@@ -24,8 +24,9 @@ To make this grammar complete (for english) we need to add
 - [x] Support for `Backgroud`s
 - [x] Support for '#' comments
 - [x] Support for '@' tags"
-- [x] Support for `"""` and backtics doc strings as step argument
-- [ ] Support for data tables as step argument
+- [x] Support for `"""` and backtics doc strings as step arguments
+- [x] Support for content types for docs strings
+- [ ] Support for data tables as step arguments
 - [ ] Support for `Scenario Outline`s
 - [ ] Support for using the keyword `Scenario Template` instead of `Senario Outline`
 - [ ] Add [syntaxe highlight testing](https://tree-sitter.github.io/tree-sitter/syntax-highlighting#unit-testing)

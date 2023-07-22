@@ -151,11 +151,15 @@ module.exports = grammar({
       $.doc_string,
     ),
     doc_string: $ => seq(
-      $._doc_string_delimiter,
-      $._multiline_text,
-      $._doc_string_delimiter,
+      $.doc_string_delimiter,
+      optional($.doc_string_content_type),
+      '\n',
+      $.doc_string_content,
+      $.doc_string_delimiter,
     ),
-    _doc_string_delimiter: $ => choice(
+    doc_string_content_type: $ => $._alpha_word,
+    doc_string_content: $ => $._multiline_text,
+    doc_string_delimiter: $ => choice(
       token('"""'),
       token('```'),
     ),

@@ -27,7 +27,11 @@ Feature: This is a feature
 		    (given_keyword)
 			(step_definition)
 			(step_arguments
-			  (doc_string)
+			  (doc_string
+			    (doc_string_delimiter)
+			    (doc_string_content)
+			    (doc_string_delimiter)
+			  )
 			)
 		  )
 		)

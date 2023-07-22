@@ -489,19 +489,43 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_doc_string_delimiter"
+          "name": "doc_string_delimiter"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "doc_string_content_type"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
         },
         {
           "type": "SYMBOL",
-          "name": "_multiline_text"
+          "name": "doc_string_content"
         },
         {
           "type": "SYMBOL",
-          "name": "_doc_string_delimiter"
+          "name": "doc_string_delimiter"
         }
       ]
     },
-    "_doc_string_delimiter": {
+    "doc_string_content_type": {
+      "type": "SYMBOL",
+      "name": "_alpha_word"
+    },
+    "doc_string_content": {
+      "type": "SYMBOL",
+      "name": "_multiline_text"
+    },
+    "doc_string_delimiter": {
       "type": "CHOICE",
       "members": [
         {
