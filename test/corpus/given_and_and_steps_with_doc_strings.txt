@@ -1,0 +1,63 @@
+====================================
+Given and and steps with doc strings
+====================================
+
+Feature: This is the name of a feature
+  Scenario: This is the title of a scenario
+    Given this is a given step
+	  """
+	  This a doc string
+	  It is some multiline text that is passed as
+	  the last parameter of the step defintion
+	  """
+	And this is another given step that is an and step
+	  """
+      This is another doc string
+	  and it should be passed as the last parameter
+	  of the deinfintion of this and step
+	  """
+    When this is a when step
+    Then this is a then step
+
+---
+
+(feature
+  (feature_keyword)
+  (title)
+  (scenarios
+    (scenario
+      (scenario_keyword)
+      (title)
+      (steps
+        (given_steps
+          (given_step
+            (given_keyword)
+            (step_definition)
+			(step_arguments
+			  (doc_string)
+			)
+          )
+		  (additional_step
+			(additional_step_keyword
+		      (and_keyword)
+			)
+			(step_definition)
+			(step_arguments
+			  (doc_string)
+			)
+		  )
+        )
+        (when_step
+          (when_keyword)
+          (step_definition)
+        )
+        (then_steps
+          (then_step
+            (then_keyword)
+            (step_definition)
+          )
+        )
+      )
+    )
+  )
+)

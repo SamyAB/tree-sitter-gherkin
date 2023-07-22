@@ -37,14 +37,16 @@ module.exports = grammar({
 
     title: $ => /[A-Z][a-zA-Z ]+/,
 
-    description: $ => seq(
+    description: $ => $._multiline_text,
+    
+    _multiline_text: $ => seq(
       /[^\s#]/,
       repeat1(
         choice(
           /[^\n#]/,
           '\n',
-        )
-      )
+        ),
+      ),
     ),
 
     rules: $ => repeat1($.rule),
@@ -127,19 +129,37 @@ module.exports = grammar({
     given_step: $ => seq(
       $.given_keyword,
       $.step_definition,
+      optional($.step_arguments),
     ),
     when_step: $ => seq(
       $.when_keyword,
       $.step_definition,
+      optional($.step_arguments),
     ),
     then_step: $ => seq(
       $.then_keyword,
       $.step_definition,
+      optional($.step_arguments),
     ),
     additional_step: $ => seq(
       $.additional_step_keyword,
       $.step_definition,
+      optional($.step_arguments),
     ),
+
+    step_arguments: $ => choice(
+      $.doc_string,
+    ),
+    doc_string: $ => seq(
+      $._doc_string_delimiter,
+      $._multiline_text,
+      $._doc_string_delimiter,
+    ),
+    _doc_string_delimiter: $ => choice(
+      token('"""'),
+      token('```'),
+    ),
+
 
     additional_step_keyword: $ => choice(
       $.and_keyword,

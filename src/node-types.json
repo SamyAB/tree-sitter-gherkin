@@ -12,6 +12,10 @@
           "named": true
         },
         {
+          "type": "step_arguments",
+          "named": true
+        },
+        {
           "type": "step_definition",
           "named": true
         }
@@ -66,6 +70,11 @@
     "fields": {}
   },
   {
+    "type": "doc_string",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "feature",
     "named": true,
     "fields": {},
@@ -110,6 +119,10 @@
       "types": [
         {
           "type": "given_keyword",
+          "named": true
+        },
+        {
+          "type": "step_arguments",
           "named": true
         },
         {
@@ -235,6 +248,21 @@
     }
   },
   {
+    "type": "step_arguments",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "doc_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "steps",
     "named": true,
     "fields": {},
@@ -265,6 +293,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "step_arguments",
+          "named": true
+        },
         {
           "type": "step_definition",
           "named": true
@@ -304,6 +336,10 @@
       "required": true,
       "types": [
         {
+          "type": "step_arguments",
+          "named": true
+        },
+        {
           "type": "step_definition",
           "named": true
         },
@@ -316,6 +352,14 @@
   },
   {
     "type": "\n",
+    "named": false
+  },
+  {
+    "type": "\"\"\"",
+    "named": false
+  },
+  {
+    "type": "```",
     "named": false
   },
   {

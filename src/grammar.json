@@ -89,6 +89,10 @@
       "value": "[A-Z][a-zA-Z ]+"
     },
     "description": {
+      "type": "SYMBOL",
+      "name": "_multiline_text"
+    },
+    "_multiline_text": {
       "type": "SEQ",
       "members": [
         {
@@ -381,6 +385,18 @@
         {
           "type": "SYMBOL",
           "name": "step_definition"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "step_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         }
       ]
     },
@@ -394,6 +410,18 @@
         {
           "type": "SYMBOL",
           "name": "step_definition"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "step_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         }
       ]
     },
@@ -407,6 +435,18 @@
         {
           "type": "SYMBOL",
           "name": "step_definition"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "step_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         }
       ]
     },
@@ -420,6 +460,63 @@
         {
           "type": "SYMBOL",
           "name": "step_definition"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "step_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "step_arguments": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "doc_string"
+        }
+      ]
+    },
+    "doc_string": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_doc_string_delimiter"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_multiline_text"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_doc_string_delimiter"
+        }
+      ]
+    },
+    "_doc_string_delimiter": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "TOKEN",
+          "content": {
+            "type": "STRING",
+            "value": "\"\"\""
+          }
+        },
+        {
+          "type": "TOKEN",
+          "content": {
+            "type": "STRING",
+            "value": "```"
+          }
         }
       ]
     },
