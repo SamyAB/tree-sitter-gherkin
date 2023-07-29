@@ -6,7 +6,7 @@ Feature: This is the name of a feature
   Scenario: This is the title of a scenario
     Given this is a given step
     When this is a when step
-    Then this is a then step
+    Then this is a then step:
 	  | this is a cell | this another cell | this a third column |
 	  | this is a cell | this another cell | this a third column |
 	  | this is a ce/l | this @aother c€l? | thi$ a th!rd column |
