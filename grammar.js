@@ -149,7 +149,9 @@ module.exports = grammar({
 
     step_arguments: $ => choice(
       $.doc_string,
+      $.data_table,
     ),
+
     doc_string: $ => seq(
       $.doc_string_delimiter,
       optional($.doc_string_content_type),
@@ -164,6 +166,19 @@ module.exports = grammar({
       token('```'),
     ),
 
+    data_table: $ => repeat1(
+      $._data_table_line,
+    ),
+    _data_table_line: $ => seq(
+      '|',
+      repeat1(
+        seq(
+          repeat1($._table_word),
+          '|',
+        ),
+      ),
+    ),
+    _table_word: $ => /[a-zA-Z0-9!@€$%^&*()_+\-=\[\]{};':"\\,.<>\/?]/,
 
     additional_step_keyword: $ => choice(
       $.and_keyword,

@@ -65,6 +65,11 @@
     }
   },
   {
+    "type": "data_table",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "description",
     "named": true,
     "fields": {}
@@ -289,6 +294,10 @@
       "required": true,
       "types": [
         {
+          "type": "data_table",
+          "named": true
+        },
+        {
           "type": "doc_string",
           "named": true
         }
@@ -450,5 +459,9 @@
   {
     "type": "when_keyword",
     "named": true
+  },
+  {
+    "type": "|",
+    "named": false
   }
 ]

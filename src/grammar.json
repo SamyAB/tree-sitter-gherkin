@@ -481,6 +481,10 @@
         {
           "type": "SYMBOL",
           "name": "doc_string"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "data_table"
         }
       ]
     },
@@ -543,6 +547,45 @@
           }
         }
       ]
+    },
+    "data_table": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "SYMBOL",
+        "name": "_data_table_line"
+      }
+    },
+    "_data_table_line": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "|"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "REPEAT1",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_table_word"
+                }
+              },
+              {
+                "type": "STRING",
+                "value": "|"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "_table_word": {
+      "type": "PATTERN",
+      "value": "[a-zA-Z0-9!@€$%^&*()_+\\-=\\[\\]{};':\"\\\\,.<>\\/?]"
     },
     "additional_step_keyword": {
       "type": "CHOICE",

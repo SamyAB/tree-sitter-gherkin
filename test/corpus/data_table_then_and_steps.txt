@@ -1,0 +1,59 @@
+=============================
+Data table for then and steps
+=============================
+
+Feature: This is the name of a feature
+  Scenario: This is the title of a scenario
+    Given this is a given step
+    When this is a when step
+    Then this is a then step
+	  | this is a cell | this another cell | this a third column |
+	  | this is a cell | this another cell | this a third column |
+	  | this is a ce/l | this @aother c€l? | thi$ a th!rd column |
+    And this is a then step
+	  | this is a cell | this another cell | this a third column |
+	  | this is a cell | this another cell | this a third column |
+	  | this is a ce/l | this @aother c€l? | thi$ a th!rd column |
+
+---
+
+(feature
+  (feature_keyword)
+  (title)
+  (scenarios
+    (scenario
+      (scenario_keyword)
+      (title)
+      (steps
+        (given_steps
+          (given_step
+            (given_keyword)
+            (step_definition)
+          )
+        )
+        (when_step
+          (when_keyword)
+          (step_definition)
+        )
+        (then_steps
+          (then_step
+            (then_keyword)
+            (step_definition)
+			(step_arguments
+			  (data_table)
+			)
+          )
+          (additional_step
+            (additional_step_keyword
+              (and_keyword)
+            )
+            (step_definition)
+			(step_arguments
+			  (data_table)
+			)
+          )
+        )
+      )
+    )
+  )
+)
