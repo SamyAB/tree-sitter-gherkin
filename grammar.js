@@ -193,7 +193,7 @@ module.exports = grammar({
     but_keyword: $ => 'But ',
     asterisk_keyword: $ => '* ',
 
-    step_definition: $ => /[^A-Z][a-z][a-z: ]+/,
+    step_definition: $ => /[^\n#]+/,
     _alpha_word: $ => /[A-Za-z][a-z]*/,
     
     comment: $ => token(seq('#', /.*/)),

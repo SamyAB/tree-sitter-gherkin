@@ -8,7 +8,9 @@ Gherkin grammar for [tree-sitter](https://github.com/tree-sitter/tree-sitter)
 
 ## TODO
 
-To make this grammar complete (for english) we need to add
+### Grammar
+
+To make this tree-sitter grammar complete (for english) we need to add
 
 - [x] Support for features with a single scenario with single line titles and given when then steps
 - [x] Support for multiline descriptions for features and scenarios
@@ -29,4 +31,12 @@ To make this grammar complete (for english) we need to add
 - [x] Support for data tables as step arguments
 - [ ] Support for `Scenario Outline`s
 - [ ] Support for using the keyword `Scenario Template` instead of `Senario Outline`
-- [ ] Add [syntaxe highlight testing](https://tree-sitter.github.io/tree-sitter/syntax-highlighting#unit-testing)
+
+### Syntax highlight
+
+To make this tree sitter usable for syntax highlighting, we need to add [syntax highlight queries](https://tree-sitter.github.io/tree-sitter/syntax-highlighting)
+
+- [x] Add syntax highlight queries for keywords
+- [x] Add syntax highlight queries for docstrings
+- [x] Add syntax highlight queries for data tables
+- [x] Add syntax highlight queries for tags

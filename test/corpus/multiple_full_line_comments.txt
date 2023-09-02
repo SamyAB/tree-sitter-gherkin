@@ -1,0 +1,50 @@
+===========================
+Multiple full line comments
+===========================
+
+Feature: This is the name of a feature
+# This is a comment
+  Scenario: This is the title of a scenario
+  # This is a comment
+    Given this is a given step
+    # This is a comment
+    When a when step
+    # a comment that does not start with an upper case
+    Then this is a then step
+    # a commment in the end of the feature
+
+---
+
+(feature
+  (feature_keyword)
+  (title)
+  (comment)
+  (scenarios
+    (scenario
+      (scenario_keyword)
+      (title)
+      (comment)
+      (steps
+        (given_steps
+          (given_step
+            (given_keyword)
+            (step_definition)
+          )
+        )
+        (comment)
+        (when_step
+          (when_keyword)
+          (step_definition)
+        )
+        (comment)
+        (then_steps
+          (then_step
+            (then_keyword)
+            (step_definition)
+          )
+        )
+      )
+    )
+  )
+  (comment)
+)

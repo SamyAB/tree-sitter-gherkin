@@ -8,7 +8,7 @@ Feature: This is the name of a feature
 	  """
 	  This a doc string
 	  It is some multiline text that is passed as
-	  the last parameter of the step defintion
+	  the last parameter of the step definition
 	  """
 	And this is another given step that is an and step
 	  """
