@@ -14,3 +14,4 @@
 (tag) @tag
 (doc_string) @string
 (data_table) @special
+(comment) @comment

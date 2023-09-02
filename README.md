@@ -40,3 +40,4 @@ To make this tree sitter usable for syntax highlighting, we need to add [syntax 
 - [x] Add syntax highlight queries for docstrings
 - [x] Add syntax highlight queries for data tables
 - [x] Add syntax highlight queries for tags
+- [x] Add syntax highlight queries for comments
